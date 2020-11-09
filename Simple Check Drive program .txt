@@ -1,0 +1,31 @@
+#include <iostream>
+
+int getAge() {
+	std::cout << "How old are you? ";
+	int age;
+	std::cin >> age;
+	return age;
+}
+
+void canDrive(int age) {
+	if (age >= 18)
+		std::cout << 'x';
+	else
+		std::cout << ' ';
+
+}
+
+
+int main()
+{
+	int age = getAge();
+		
+		
+	std::cout << "Allowed to drive a car [";
+	canDrive(age);
+	std::cout << "]";
+
+	return 0;
+}
+
+

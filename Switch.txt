@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+
+enum class AnimalType {
+	chicken, 
+	goat,
+	cat,
+	dog,
+	snake
+};
+
+std::string getAnimalName(AnimalType animal) {
+	switch (animal)
+	{
+		case AnimalType::cat:
+			return "cat";
+		case AnimalType::chicken:
+			return "chicken";
+		case AnimalType::dog:
+			return "dog";
+		case AnimalType::goat:
+			return "goat";
+		case AnimalType::snake:
+			return "snake";
+		default:
+			return "?????";
+	}
+
+}
+
+void printLegs(AnimalType animal) {
+	std::cout << "A " << getAnimalName(animal) << " has ";
+
+	switch (animal)
+	{
+	case AnimalType::snake:
+		std::cout << '0';
+		break;
+	case AnimalType::chicken:
+		std::cout << '2';
+		break;
+	case AnimalType::cat:
+	case AnimalType::dog:
+	case AnimalType::goat:
+		std::cout << '4';
+		break;
+	default: 
+		std::cout << "???";
+		break;
+	}
+
+	std::cout << " legs.\n";
+}
+
+int main()
+{
+
+	printLegs(AnimalType::cat);
+	printLegs(AnimalType::snake);
+	printLegs(AnimalType::chicken);
+
+	return 0;
+}
